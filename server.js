@@ -14,7 +14,7 @@ const app = express();
 app.use(express.json());
 
 const corsOptions = {
-  origin: ['https://eduq.vercel.app', 'http://localhost:3000'],
+  origin: ['https://studentaze.vercel.app', 'http://localhost:3000'],
   credentials: true,
   optionSuccessStatus: 200
 };
