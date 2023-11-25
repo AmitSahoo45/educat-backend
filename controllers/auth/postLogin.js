@@ -18,7 +18,7 @@ const postLogin = async (req, res) => {
         },
         process.env.TOKEN_KEY,
         {
-          expiresIn: "24h",
+          expiresIn: "10d",
         }
       );
 

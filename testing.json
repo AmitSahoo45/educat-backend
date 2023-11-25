@@ -1,0 +1,132 @@
+{
+    "quizName": "Kya Karoon - 2",
+    "quizSubTitle": "Meri iss halat pe, tere bin abb mein kya karoon, kya karoon - 2",
+    "question": [
+        {
+            "quizQuestion": "What is 2 + 2?",
+            "quizOptions": [
+                {
+                    "index": 1,
+                    "option": "1",
+                    "isCorrect": false
+                },
+                {
+                    "index": 2,
+                    "option": "2",
+                    "isCorrect": false
+                },
+                {
+                    "index": 3,
+                    "option": "3",
+                    "isCorrect": false
+                },
+                {
+                    "index": 4,
+                    "option": "4",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "quizQuestion": "What is 2 + 3?",
+            "quizOptions": [
+                {
+                    "index": 1,
+                    "option": "1",
+                    "isCorrect": false
+                },
+                {
+                    "index": 2,
+                    "option": "2",
+                    "isCorrect": false
+                },
+                {
+                    "index": 3,
+                    "option": "3",
+                    "isCorrect": false
+                },
+                {
+                    "index": 4,
+                    "option": "5",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "quizQuestion": "What is 2 + 4?",
+            "quizOptions": [
+                {
+                    "index": 1,
+                    "option": "1",
+                    "isCorrect": false
+                },
+                {
+                    "index": 2,
+                    "option": "2",
+                    "isCorrect": false
+                },
+                {
+                    "index": 3,
+                    "option": "3",
+                    "isCorrect": false
+                },
+                {
+                    "index": 4,
+                    "option": "6",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "quizQuestion": "What is 2 + 5?",
+            "quizOptions": [
+                {
+                    "index": 1,
+                    "option": "1",
+                    "isCorrect": false
+                },
+                {
+                    "index": 2,
+                    "option": "2",
+                    "isCorrect": false
+                },
+                {
+                    "index": 3,
+                    "option": "3",
+                    "isCorrect": false
+                },
+                {
+                    "index": 4,
+                    "option": "7",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "quizQuestion": "What is 2 + 6?",
+            "quizOptions": [
+                {
+                    "index": 1,
+                    "option": "1",
+                    "isCorrect": false
+                },
+                {
+                    "index": 2,
+                    "option": "2",
+                    "isCorrect": false
+                },
+                {
+                    "index": 3,
+                    "option": "3",
+                    "isCorrect": false
+                },
+                {
+                    "index": 4,
+                    "option": "8",
+                    "isCorrect": true
+                }
+            ]
+        }
+    ],
+    "isChecked": false
+}

@@ -7,6 +7,7 @@ require("dotenv").config();
 const socketServer = require("./socketServer");
 const authRoutes = require("./routes/authRoutes");
 const friendInvitationRoutes = require("./routes/friendInvitationRoutes");
+const quizRoutes = require("./routes/Quiz");
 
 const PORT = process.env.PORT || process.env.API_PORT;
 
@@ -28,6 +29,7 @@ app.get('/', (req, res) => {
 // register the routes
 app.use("/api/auth", authRoutes);
 app.use("/api/friend-invitation", friendInvitationRoutes);
+app.use("/api/quiz", quizRoutes);
 
 const server = http.createServer(app);
 socketServer.registerSocketServer(server);
