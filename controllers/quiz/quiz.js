@@ -32,7 +32,7 @@ const getAllQuizByUser = async (req, res) => {
     try {
         const { userId } = req.user
         const quiz = await quizModel.find({ user: userId })
-        
+
         res.status(200).json({ quiz })
     } catch (error) {
         res.status(500).json({ message: error.message })
@@ -164,6 +164,27 @@ const submitQuestion = async (req, res) => {
     }
 }
 
+const getQuizResult = async (req, res) => {
+    try {
+        const { id } = req.params
+        const { userId } = req.user
+
+        if (!id) return res.status(400).json({ message: 'Empty Quiz id' })
+        if (!mongoose.Types.ObjectId.isValid(id)) return res.status(400).json({ message: 'Quiz id is not valid' })
+
+        const { questions, user, quizName } = await quizModel.findById(id).select('questions user quizName').lean()
+
+        if (!user.equals(userId))
+            return res.status(400).json({ status: false, message: 'You are not authorized to see this result' })
+
+        const quizResults = await UserResultModel.find({ quiz: id }).populate({ path: 'user', select: 'username mail _id' })
+
+        res.status(200).json({ length: questions.length, quizName, results: quizResults })
+    } catch (error) {
+        res.status(500).json({ message: error.message })
+    }
+}
+
 module.exports = {
     createQuiz,
     getAllQuizByUser,
@@ -171,5 +192,6 @@ module.exports = {
     deleteQuiz,
     ToggleQuizAvailability,
     getQuizById,
-    submitQuestion
+    submitQuestion,
+    getQuizResult
 }

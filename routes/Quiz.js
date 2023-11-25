@@ -5,7 +5,8 @@ const auth = require("../middleware/auth");
 const {
     createQuiz, getAllQuizByUser,
     deleteQuiz, updateQuiz, ToggleQuizAvailability,
-    getQuizById, submitQuestion
+    getQuizById, submitQuestion,
+    getQuizResult
 } = require("../controllers/quiz/quiz");
 
 router.post("/create", auth, createQuiz);
@@ -17,5 +18,7 @@ router.delete("/delete/:id", auth, deleteQuiz);
 router.patch("/update/:id/activity", auth, ToggleQuizAvailability);
 
 router.patch("/:id/submit", auth, submitQuestion);
+
+router.get("/:id/result", auth, getQuizResult);
 
 module.exports = router;
