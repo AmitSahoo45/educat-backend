@@ -107,13 +107,10 @@ const getQuizById = async (req, res) => {
         var quiz = [];
 
         if (user_result) {
-            // since user result already exists, this means user has already attempted and submited some questions.
-            // so we will not be sending those questions again.
-            // Those question are stored in user_result.UserAttempted array
             const { UserAttempted } = user_result
-            const attemptedQuestions = UserAttempted.map(({ question }) => question)
-            quiz = await quizModel.findById(id)
-            quiz.questions = quiz.questions.filter(({ _id }) => !attemptedQuestions.includes(_id))
+            const attemptedQuestions = UserAttempted.map(({ question }) => String(question))
+            quiz = await quizModel.findById(id).lean()
+            quiz.questions = quiz.questions.filter(({ _id }) => !attemptedQuestions.includes(String(_id)))
         }
         else { quiz = await quizModel.findById(id) }
 
